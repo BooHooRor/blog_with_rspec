@@ -1,2 +1,54 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+	background: rgba(9,9,9,0.3);
+}
+
+.hidden{
+  display: none;
+}
+
+.inputs {
+	color: #757575;
+	width: 80%;
+	font-family: 'Titillium Web', sans-serif;
+	border: none;
+	background: none;
+	transition: 0.2s;
+}
+
+.inputs:focus {
+	outline: none;
+	background: none;
+}
+
+.inputs-bigger:focus {
+	/*font-size: 42px;*/
+	letter-spacing: 2px;
+}
+.inputs-smaller:focus {
+	/*font-size: 30px;*/
+	letter-spacing: 2px;
+}
+.inputs-bigger{
+	font-size: 40px;
+}
+.inputs-smaller{
+	padding-left: 20px;
+	font-size: 25px;
+}
+
+
+.submit_new_list{
+  color: #757575;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(1,1,1,0);
+  border: none;
+  cursor: pointer;
+  i{
+  }
+}
