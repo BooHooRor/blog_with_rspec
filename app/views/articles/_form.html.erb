@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="col-md-12">
+		<%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f|
+			%>
+			<% if @article.errors.any? %>
+			<div class="panel panel-danger col-md-offset-1">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<%= pluralize(@article.errors.count, "error") %>
+						prohibited this article from being save:
+					</h2>
+					<div class="panel-body">
+						<ul>
+							<% @article.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+				
+			<% end %>
+			<div class="form-group">
+				<div class="control-label col-md-2">
+					<%= f.label :title, class: "hidden" %>
+				</div>
+				<div class="col-md-10">
+					<%= f.text_field :title, class: ' inputs inputs-bigger', placeholder: "Title of article", autofocus: true %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-md-2">
+					<%= f.label :body, class: "hidden" %>
+				</div>
+				<div class="col-md-10">
+					<%= f.text_area :body, rows: 10, class: 'inputs inputs-smaller', placeholder: "Body of article"%>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-12 col-md-offset-2">
+					<button id=
+					<% if params[:action] == "edit" %>
+					"Update Article"
+					<% else %>
+					"Create Article"
+					<% end %> class="submit_new_list pull-left" type="submit">
+				        <i class="fa fa-check fa-4x" aria-hidden="true"></i>
+
+				    </button>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
