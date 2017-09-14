@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
   	if @article.save
     	flash[:success] = "Article has been created"
-    	redirect_to articles_path
+    	redirect_to articles_path and return
     else
       flash.now[:danger] = "Article has not been created"
       render :new
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = @article.comments.build
-    @comments = @article.comments
+    @comments = @article.comments.order(created_at: :desc)
   end
 
   def edit
